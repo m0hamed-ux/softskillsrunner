@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soft Skills Runner</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="game-container">
+        <canvas id="game-canvas" width="800" height="600"></canvas>
+
+        <!-- Écran de démarrage -->
+        <div id="start-screen" class="screen">
+            <h1>Soft Skills Runner</h1>
+            <p>Collectez les 8 compétences pour gagner !</p>
+            <p class="controls">Appuyez sur ESPACE ou HAUT pour sauter</p>
+            <button id="start-btn">JOUER</button>
+        </div>
+
+        <!-- Écran Instructions -->
+        <div id="instructions-screen" class="screen hidden">
+            <h1>Comment Jouer</h1>
+            <div class="instructions-content">
+                <div class="instruction-item">
+                    <span class="instruction-number">1</span>
+                    <p>Appuyez sur ESPACE ou HAUT pour sauter (2x pour double saut)</p>
+                </div>
+                <div class="instruction-item">
+                    <span class="instruction-number">2</span>
+                    <p>Collectez les 8 compétences</p>
+                </div>
+                <div class="instruction-item">
+                    <span class="instruction-number">3</span>
+                    <p>Évitez les obstacles</p>
+                </div>
+            </div>
+            <button id="play-btn">COMMENCER</button>
+        </div>
+
+        <!-- Écran Game Over -->
+        <div id="gameover-screen" class="screen hidden">
+            <h1>PERDU !</h1>
+            <p id="gameover-coins">Compétences : 0/8</p>
+            <button id="restart-btn">RÉESSAYER</button>
+        </div>
+
+        <!-- Écran de victoire -->
+        <div id="win-screen" class="screen hidden">
+            <h1>BRAVO !</h1>
+            <p>Vous avez collecté toutes les compétences !</p>
+            <button id="playagain-btn">REJOUER</button>
+        </div>
+
+        <!-- HUD -->
+        <div id="hud" class="hidden">
+            <div id="coin-frame">
+                <div class="coin-slot" data-slot="0" data-skill="Communication interpersonnelle"></div>
+                <div class="coin-slot" data-slot="1" data-skill="Résolution de problèmes"></div>
+                <div class="coin-slot" data-slot="2" data-skill="Efficacité professionnelle"></div>
+                <div class="coin-slot" data-slot="3" data-skill="Leadership & Management"></div>
+                <div class="coin-slot" data-slot="4" data-skill="Connaissance de soi"></div>
+                <div class="coin-slot" data-slot="5" data-skill="Attitudes & bien-être"></div>
+                <div class="coin-slot" data-slot="6" data-skill="Gestion des conflits"></div>
+                <div class="coin-slot" data-slot="7" data-skill="Aisance relationnelle"></div>
+            </div>
+        </div>
+
+        <!-- Popup nom de compétence -->
+        <div id="skill-popup" class="hidden">
+            <span id="skill-popup-text"></span>
+        </div>
+
+        <!-- Countdown -->
+        <div id="countdown" class="hidden">
+            <span id="countdown-number"></span>
+        </div>
+    </div>
+
+    <!-- JavaScript Modules -->
+    <script src="js/collision.js"></script>
+    <script src="js/input.js"></script>
+    <script src="js/background.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/obstacle.js"></script>
+    <script src="js/coin.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>
