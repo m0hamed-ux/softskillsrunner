@@ -639,8 +639,44 @@ body {
 }
 
 /* ============================================
-   MOBILE RESPONSIVE - FULLSCREEN
+   MOBILE RESPONSIVE - FULLSCREEN LANDSCAPE
    ============================================ */
+
+/* Rotate to landscape message for portrait mode */
+#rotate-device {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #0a0a1a;
+    z-index: 9999;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'Fredoka One', cursive;
+    text-align: center;
+    padding: 20px;
+}
+
+#rotate-device .rotate-icon {
+    font-size: 60px;
+    margin-bottom: 20px;
+    animation: rotatePhone 2s ease-in-out infinite;
+}
+
+#rotate-device p {
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+@keyframes rotatePhone {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(90deg); }
+}
+
 @media (max-width: 850px) {
     body {
         background: #0a0a1a;
@@ -724,56 +760,37 @@ body {
     }
 }
 
-/* Extra small devices */
-@media (max-width: 480px) {
-    .screen h1 {
-        font-size: 26px;
+/* Portrait mode on mobile - show rotate message */
+@media (max-width: 850px) and (orientation: portrait) {
+    #rotate-device {
+        display: flex;
     }
 
-    .screen p {
-        font-size: 14px;
-    }
-
-    .screen button {
-        padding: 12px 30px;
-        font-size: 16px;
-    }
-
-    #coin-frame {
-        padding: 6px 10px;
-        gap: 4px;
-    }
-
-    .coin-slot {
-        width: 24px;
-        height: 24px;
-    }
-
-    #skill-popup-text {
-        font-size: 18px;
-    }
-
-    .instruction-item {
-        font-size: 16px;
-    }
-
-    .instruction-number {
-        width: 35px;
-        height: 35px;
-        font-size: 18px;
+    #game-container {
+        display: none;
     }
 }
 
-/* Landscape orientation on mobile */
+/* Landscape mode on mobile - show game */
 @media (max-width: 850px) and (orientation: landscape) {
+    #rotate-device {
+        display: none;
+    }
+
+    #game-container {
+        display: block;
+        width: 100vw;
+        height: 100vh;
+    }
+
     #coin-frame {
         padding: 6px 10px;
         gap: 4px;
     }
 
     .coin-slot {
-        width: 26px;
-        height: 26px;
+        width: 30px;
+        height: 30px;
     }
 
     .screen h1 {
@@ -809,5 +826,55 @@ body {
 
     #hud {
         top: 5px;
+    }
+
+    #skill-popup-text {
+        font-size: 20px;
+    }
+
+    #countdown-number {
+        font-size: 80px;
+    }
+
+    #countdown-number.go {
+        font-size: 60px;
+    }
+}
+
+/* Extra small devices in landscape */
+@media (max-height: 400px) and (orientation: landscape) {
+    .screen h1 {
+        font-size: 24px;
+        margin-bottom: 8px;
+    }
+
+    .screen p {
+        font-size: 12px;
+        margin-bottom: 8px;
+    }
+
+    .screen button {
+        padding: 8px 25px;
+        font-size: 14px;
+    }
+
+    .instruction-item {
+        font-size: 12px;
+    }
+
+    .instruction-number {
+        width: 25px;
+        height: 25px;
+        font-size: 14px;
+    }
+
+    #coin-frame {
+        padding: 5px 8px;
+        gap: 3px;
+    }
+
+    .coin-slot {
+        width: 25px;
+        height: 25px;
     }
 }

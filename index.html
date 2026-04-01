@@ -7,11 +7,18 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="theme-color" content="#0a0a1a">
+    <meta name="screen-orientation" content="landscape">
     <title>Soft Skills Runner</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Rotate device message for portrait mode -->
+    <div id="rotate-device">
+        <div class="rotate-icon">📱</div>
+        <p>Veuillez tourner votre appareil en mode paysage</p>
+    </div>
+
     <div id="game-container">
         <canvas id="game-canvas" width="800" height="600"></canvas>
 
