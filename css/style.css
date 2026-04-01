@@ -639,14 +639,20 @@ body {
 }
 
 /* ============================================
-   MOBILE RESPONSIVE
+   MOBILE RESPONSIVE - FULLSCREEN
    ============================================ */
 @media (max-width: 850px) {
+    body {
+        background: #0a0a1a;
+    }
+
     #game-container {
         width: 100vw;
-        height: 75vw;
+        height: 100vh;
         max-height: 100vh;
         border-radius: 0;
+        box-shadow: none;
+        border: none;
     }
 
     #game-canvas {
@@ -655,30 +661,153 @@ body {
     }
 
     .screen h1 {
-        font-size: 36px;
+        font-size: 32px;
         letter-spacing: 2px;
     }
 
     .screen p {
-        font-size: 18px;
+        font-size: 16px;
+        padding: 0 20px;
     }
 
     .screen button {
-        padding: 14px 45px;
-        font-size: 20px;
+        padding: 14px 40px;
+        font-size: 18px;
     }
 
     #coin-frame {
-        padding: 10px 16px;
-        gap: 6px;
+        padding: 8px 12px;
+        gap: 5px;
+        border-radius: 30px;
     }
 
     .coin-slot {
-        width: 32px;
-        height: 32px;
+        width: 28px;
+        height: 28px;
     }
 
     .coin-slot.filled::after {
+        font-size: 14px;
+    }
+
+    #skill-popup-text {
+        font-size: 22px;
+        letter-spacing: 1px;
+        max-width: 90vw;
+    }
+
+    #countdown-number {
+        font-size: 100px;
+    }
+
+    #countdown-number.go {
+        font-size: 70px;
+    }
+
+    .instructions-content {
+        padding: 0 20px;
+    }
+
+    .instruction-item {
+        gap: 15px;
+        font-size: 18px;
+    }
+
+    .instruction-number {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    #hud {
+        top: 10px;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+    .screen h1 {
+        font-size: 26px;
+    }
+
+    .screen p {
+        font-size: 14px;
+    }
+
+    .screen button {
+        padding: 12px 30px;
         font-size: 16px;
+    }
+
+    #coin-frame {
+        padding: 6px 10px;
+        gap: 4px;
+    }
+
+    .coin-slot {
+        width: 24px;
+        height: 24px;
+    }
+
+    #skill-popup-text {
+        font-size: 18px;
+    }
+
+    .instruction-item {
+        font-size: 16px;
+    }
+
+    .instruction-number {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+    }
+}
+
+/* Landscape orientation on mobile */
+@media (max-width: 850px) and (orientation: landscape) {
+    #coin-frame {
+        padding: 6px 10px;
+        gap: 4px;
+    }
+
+    .coin-slot {
+        width: 26px;
+        height: 26px;
+    }
+
+    .screen h1 {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+
+    .screen p {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .screen button {
+        padding: 10px 30px;
+        font-size: 16px;
+    }
+
+    .instructions-content {
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .instruction-item {
+        font-size: 14px;
+        gap: 10px;
+    }
+
+    .instruction-number {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+    }
+
+    #hud {
+        top: 5px;
     }
 }
